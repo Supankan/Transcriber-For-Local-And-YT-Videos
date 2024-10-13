@@ -1,5 +1,6 @@
 import streamlit as st
 import moviepy.editor as mp
+from dotenv import load_dotenv
 import librosa
 import soundfile as sf
 import requests
@@ -7,9 +8,12 @@ import json
 import os
 import time
 
+load_dotenv()
+HF_KEY = os.getenv('HF_KEY')
+
 # Replace with your Hugging Face API URL and token
 API_URL = "https://api-inference.huggingface.co/models/openai/whisper-large-v3"
-headers = {"Authorization": f"Bearer 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"}
+headers = {"Authorization": f"Bearer {HF_KEY}"}
 
 
 def extract_audio(video_path, audio_path):
