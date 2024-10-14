@@ -1,1 +1,0 @@
-# Transcriber-For-Local-And-YT-Videos
